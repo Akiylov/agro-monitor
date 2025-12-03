@@ -16,8 +16,10 @@ import {
   LayoutDashboard,
   Wheat,
   Server,
+  ExternalLink,
 } from "lucide-react";
 import { cn } from "../ui/utils";
+import { useLanguage } from "../../contexts/LanguageContext";
 
 interface SidebarProps {
   currentScreen: string;
@@ -25,36 +27,68 @@ interface SidebarProps {
 }
 
 export function Sidebar({ currentScreen, setCurrentScreen }: SidebarProps) {
+  const { t } = useLanguage();
+
   const menuGroups = [
     {
-      title: "Главная",
-      items: [{ id: "dashboard", label: "Дашборд", icon: LayoutDashboard }],
+      title: t("sidebar.main"),
+      items: [
+        {
+          id: "dashboard",
+          label: t("sidebar.dashboard"),
+          icon: LayoutDashboard,
+        },
+      ],
     },
     {
-      title: "Подсистемы",
+      title: t("sidebar.subsystems"),
       items: [
         {
           id: "fields",
-          label: "Земельный кадастр и поля",
+          label: t("sidebar.land_cadastre"),
           icon: ClipboardList,
         },
-        { id: "satellite", label: "Спутниковый мониторинг", icon: Satellite },
-        { id: "weather", label: "Погода и агрометеоданные", icon: CloudSun },
-        { id: "operations", label: "Агрооперации", icon: Tractor },
-        { id: "harvest_forecast", label: "Прогноз урожайности", icon: Wheat },
-        { id: "scouting", label: "Скаутинг", icon: ScanEye },
-        { id: "analytics", label: "Аналитика и оповещения", icon: TrendingUp },
-        { id: "reports", label: "Отчетность", icon: FileText },
-        { id: "integrations", label: "Интеграция и API", icon: Server },
-        { id: "economy", label: "Экономика и цены", icon: DollarSign },
+        {
+          id: "satellite",
+          label: t("sidebar.satellite_monitoring"),
+          icon: Satellite,
+        },
+        {
+          id: "weather",
+          label: t("sidebar.weather_agrometeoro"),
+          icon: CloudSun,
+        },
+        {
+          id: "operations",
+          label: t("sidebar.agro_operations"),
+          icon: Tractor,
+        },
+        {
+          id: "harvest_forecast",
+          label: t("sidebar.harvest_forecast"),
+          icon: Wheat,
+        },
+        { id: "scouting", label: t("sidebar.scouting"), icon: ScanEye },
+        {
+          id: "analytics",
+          label: t("sidebar.analytics_alerts"),
+          icon: TrendingUp,
+        },
+        { id: "reports", label: t("sidebar.reporting"), icon: FileText },
+        {
+          id: "integrations",
+          label: t("sidebar.integration_api"),
+          icon: Server,
+        },
+        { id: "economy", label: t("sidebar.economy_prices"), icon: DollarSign },
       ],
     },
     // {
-    //   title: 'Система',
+    //   title: t('sidebar.system'),
     //   items: [
-    //     { id: 'users', label: 'Пользователи', icon: Users },
-    //     { id: 'references', label: 'Справочники', icon: BookOpen },
-    //     { id: 'settings', label: 'Настройки', icon: Settings },
+    //     { id: 'users', label: t('sidebar.users'), icon: Users },
+    //     { id: 'references', label: t('sidebar.references'), icon: BookOpen },
+    //     { id: 'settings', label: t('sidebar.settings'), icon: Settings },
     //   ]
     // }
   ];
@@ -66,7 +100,7 @@ export function Sidebar({ currentScreen, setCurrentScreen }: SidebarProps) {
           <Leaf className="text-white w-5 h-5" />
         </div>
         <span className="font-bold text-lg tracking-tight text-slate-100">
-          AgroMonitor
+          {t("sidebar.app_name")}
         </span>
       </div>
 
@@ -112,6 +146,21 @@ export function Sidebar({ currentScreen, setCurrentScreen }: SidebarProps) {
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="p-4 border-t border-slate-700/50 bg-[#1e293b]">
+        <a
+          href="https://front-kashkadarya-gov.tenzorsoft.uz/control-panel"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full flex items-center gap-3 px-3 py-2.5 rounded-md text-sm font-medium transition-all duration-200 group text-slate-300 hover:bg-slate-800 hover:text-white"
+        >
+          <ExternalLink
+            size={18}
+            className="opacity-90 text-slate-400 group-hover:text-white"
+          />
+          <span className="flex-1 text-left">{t("sidebar.digital_government")}</span>
+        </a>
       </div>
 
       {/* <div className="p-4 border-t border-slate-700/50 bg-[#1e293b]">
