@@ -148,7 +148,7 @@ export function Sidebar({ currentScreen, setCurrentScreen }: SidebarProps) {
         ))}
       </div>
 
-      <div className="p-4 border-t border-slate-700/50 bg-[#1e293b]">
+      {/* <div className="p-4 border-t border-slate-700/50 bg-[#1e293b]">
         <a
           href="https://front-kashkadarya-gov.tenzorsoft.uz/control-panel"
           target="_blank"
@@ -160,6 +160,35 @@ export function Sidebar({ currentScreen, setCurrentScreen }: SidebarProps) {
             className="opacity-90 text-slate-400 group-hover:text-white"
           />
           <span className="flex-1 text-left">{t("sidebar.digital_government")}</span>
+        </a>
+      </div> */}
+
+      <div className="p-4 border-t border-slate-700/50 bg-[#1e293b]">
+        <a
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            height: "40px",
+          }}
+          href="https://front-kashkadarya-gov.tenzorsoft.uz/control-panel"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="
+      w-full flex items-center justify-center gap-2 
+      px-4 py-3 rounded-lg 
+      bg-blue-500 hover:bg-blue-600 
+      text-white text-sm font-medium 
+      transition-all duration-200 
+      shadow-lg shadow-blue-500/20
+    "
+        >
+          <ExternalLink size={18} className="text-white/90" />
+
+          {/* Matn */}
+          <span>{t("sidebar.digital_government")}</span>
+
+          {/* Ikonka */}
         </a>
       </div>
 
