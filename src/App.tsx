@@ -28,98 +28,84 @@ export default function App() {
       case "dashboard":
         return (
           <div>
-            <div>1</div>
             <MainDashboard />;
           </div>
         );
       case "map":
         return (
           <div>
-            <div>2</div>
             <FieldMap />
           </div>
         ); // Keep map accessible if referenced elsewhere, though removed from sidebar
       case "satellite":
         return (
           <div>
-            <div>3</div>
             <SatelliteData />;
           </div>
         );
       case "weather":
         return (
           <div>
-            <div>4</div>
             <Weather />;
           </div>
         );
       case "vegetation":
         return (
           <div>
-            <div>5</div>
             <VegetationIndices />;
           </div>
         ); // Might need to consolidate
       case "fields":
         return (
           <div>
-            <div>6</div>
             <FieldsAndCrops />;
           </div>
         );
       case "operations":
         return (
           <div>
-            <div>7</div>
             <AgroOperations />;
           </div>
         );
       case "scouting":
         return (
           <div>
-            <div>8</div>
             <Scouting />;
           </div>
         );
       case "analytics":
         return (
           <div>
-            <div>9</div>
             <GeneralAnalytics />;
           </div>
         );
       case "yield":
         return (
           <div>
-            <div>0</div>
             <AnalyticsYield />;
           </div>
         ); // Keep for backward compat or direct link
       case "harvest_forecast":
         return (
           <div>
-            <div>11</div>
             <AnalyticsYield />;
           </div>
         ); // Mapping Harvest Forecast to existing Yield component
       case "economy":
         return (
           <div>
-            <div>12</div>
             <AnalyticsEconomy />;
           </div>
         );
       case "reports":
         return (
           <div>
-            <div>13</div>
             <Reports />;
           </div>
         );
       case "integrations":
         return (
           <div>
-            <div>14</div>
             <Integrations />;
           </div>
         );
