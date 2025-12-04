@@ -27,6 +27,7 @@ export function TopNav() {
         </div>
       </div>
 
+      <h6>dev mode</h6>
       <div className="flex items-center gap-4">
         <div className="flex items-center gap-2 mr-4">
           <Button
