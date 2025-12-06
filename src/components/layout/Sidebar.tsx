@@ -171,7 +171,7 @@ export function Sidebar({ currentScreen, setCurrentScreen }: SidebarProps) {
             justifyContent: "center",
             height: "40px",
           }}
-          href="https://front-kashkadarya-gov.tenzorsoft.uz/control-panel"
+          href="https://front-bukhara-gov.tenzorsoft.uz/control-panel"
           target="_blank"
           rel="noopener noreferrer"
           className="
